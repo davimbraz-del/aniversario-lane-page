@@ -1,0 +1,800 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>3ª Copa de FTV Amigos de Davi — 30 de Janeiro de 2027</title>
+<meta name="description" content="3ª Copa de FTV Amigos de Davi — Prainha Zona Sul, 30 de janeiro de 2027. Futevôlei, churrasco, pagode e muita resenha entre amigos.">
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg-0:#0b0906;
+    --bg-1:#130f0a;
+    --bg-2:#1c160d;
+    --bg-card:#1f190f;
+    --bg-card-hover:#271f12;
+    --gold:#ffc93c;
+    --gold-deep:#e6a412;
+    --gold-soft:#ffdd7a;
+    --sunset:#ff7a3c;
+    --sunset-deep:#e8502a;
+    --sand:#e8cd9a;
+    --sand-dim:#c9ad78;
+    --white:#fbf7ef;
+    --white-dim:rgba(251,247,239,.68);
+    --line:rgba(255,201,60,.18);
+    --shadow-gold: 0 8px 30px rgba(255,201,60,.25);
+    --radius:18px;
+    --maxw:1180px;
+    --ease:cubic-bezier(.22,1,.36,1);
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--bg-0);
+    color:var(--white);
+    font-family:'Poppins',sans-serif;
+    overflow-x:hidden;
+    line-height:1.6;
+  }
+  h1,h2,h3,.display{
+    font-family:'Anton',sans-serif;
+    font-weight:400;
+    text-transform:uppercase;
+    letter-spacing:.5px;
+    line-height:1.05;
+  }
+  img{max-width:100%; display:block;}
+  a{color:inherit; text-decoration:none;}
+  ul{list-style:none;}
+  .container{max-width:var(--maxw); margin:0 auto; padding:0 24px;}
+  section{position:relative; padding:110px 0;}
+  .eyebrow{
+    display:inline-flex; align-items:center; gap:8px;
+    font-size:13px; font-weight:700; letter-spacing:3px;
+    color:var(--gold); text-transform:uppercase; margin-bottom:18px;
+  }
+  .eyebrow::before, .eyebrow::after{content:""; width:26px; height:2px; background:var(--gold); border-radius:2px;}
+  .section-title{
+    font-size:clamp(30px,5vw,52px);
+    color:var(--white);
+    margin-bottom:20px;
+  }
+  .section-title em{font-style:normal; color:var(--gold);}
+  .section-lede{
+    max-width:640px; color:var(--white-dim); font-size:17px; margin-bottom:50px;
+  }
+  .center{text-align:center; margin-left:auto; margin-right:auto;}
+  .btn{
+    display:inline-flex; align-items:center; justify-content:center; gap:10px;
+    padding:18px 38px; border-radius:100px; font-family:'Anton',sans-serif;
+    font-size:16px; letter-spacing:1.5px; text-transform:uppercase;
+    cursor:pointer; border:none; transition:transform .35s var(--ease), box-shadow .35s var(--ease), background .35s;
+    position:relative; overflow:hidden;
+  }
+  .btn-primary{
+    background:linear-gradient(135deg,var(--gold-soft),var(--gold) 55%,var(--gold-deep));
+    color:#1a1206; box-shadow:var(--shadow-gold);
+  }
+  .btn-primary:hover{transform:translateY(-4px) scale(1.03); box-shadow:0 14px 40px rgba(255,201,60,.4);}
+  .btn-primary:active{transform:translateY(-1px) scale(.99);}
+  .btn-outline{
+    background:transparent; color:var(--white); border:2px solid rgba(251,247,239,.35);
+  }
+  .btn-outline:hover{border-color:var(--gold); color:var(--gold); transform:translateY(-4px);}
+  .btn-lg{padding:22px 48px; font-size:18px;}
+  .btn-block-note{
+    margin-top:14px; font-size:12px; letter-spacing:1px; color:var(--white-dim);
+    text-transform:uppercase; font-weight:600;
+  }
+  .badge-edit{
+    display:inline-block; font-size:10px; letter-spacing:1.5px; font-weight:700;
+    color:var(--bg-0); background:var(--gold); padding:3px 9px; border-radius:6px;
+    text-transform:uppercase; margin-left:8px; vertical-align:middle;
+  }
+  .editable{
+    border:1px dashed rgba(255,201,60,.55); border-radius:10px; padding:2px 10px;
+    color:var(--gold-soft); font-style:normal;
+  }
+
+  /* reveal on scroll */
+  .reveal{opacity:0; transform:translateY(36px); transition:opacity .9s var(--ease), transform .9s var(--ease);}
+  .reveal.in{opacity:1; transform:translateY(0);}
+  .reveal-scale{opacity:0; transform:scale(.9); transition:opacity .9s var(--ease), transform .9s var(--ease);}
+  .reveal-scale.in{opacity:1; transform:scale(1);}
+
+  /* ============ NAV ============ */
+  header{
+    position:fixed; top:0; left:0; right:0; z-index:1000;
+    padding:18px 0; transition:background .4s, padding .4s, box-shadow .4s, backdrop-filter .4s;
+  }
+  header.scrolled{
+    background:rgba(11,9,6,.86); backdrop-filter:blur(14px); padding:12px 0;
+    box-shadow:0 6px 24px rgba(0,0,0,.35); border-bottom:1px solid var(--line);
+  }
+  nav{display:flex; align-items:center; justify-content:space-between;}
+  .nav-brand{display:flex; align-items:center; gap:12px; font-family:'Anton',sans-serif; letter-spacing:1px;}
+  .nav-brand img{height:42px; width:42px; object-fit:contain; transition:height .4s;}
+  header.scrolled .nav-brand img{height:36px; width:36px;}
+  .nav-brand span{font-size:14px; color:var(--white); line-height:1.15;}
+  .nav-brand small{display:block; color:var(--gold); font-size:11px; letter-spacing:2px;}
+  .nav-links{display:flex; align-items:center; gap:34px;}
+  .nav-links a{font-size:13px; font-weight:600; letter-spacing:1px; text-transform:uppercase; color:var(--white-dim); transition:color .3s; position:relative;}
+  .nav-links a::after{content:""; position:absolute; left:0; bottom:-6px; width:0; height:2px; background:var(--gold); transition:width .3s var(--ease);}
+  .nav-links a:hover{color:var(--white);}
+  .nav-links a:hover::after{width:100%;}
+  .nav-cta{padding:12px 26px; font-size:12px;}
+  .nav-toggle{display:none; flex-direction:column; gap:5px; background:none; border:none; cursor:pointer; padding:6px;}
+  .nav-toggle span{width:26px; height:2px; background:var(--white); border-radius:2px; transition:.3s;}
+  .mobile-menu{
+    display:none; position:fixed; inset:0; background:rgba(11,9,6,.98); z-index:999;
+    flex-direction:column; align-items:center; justify-content:center; gap:30px;
+    opacity:0; pointer-events:none; transition:opacity .35s var(--ease);
+  }
+  .mobile-menu.open{opacity:1; pointer-events:auto;}
+  .mobile-menu a{font-family:'Anton',sans-serif; font-size:24px; letter-spacing:2px; color:var(--white); text-transform:uppercase;}
+  .mobile-menu a:hover{color:var(--gold);}
+
+  /* ============ HERO ============ */
+  .hero{
+    min-height:100vh; display:flex; align-items:center; justify-content:center;
+    position:relative; overflow:hidden; padding:160px 24px 90px; text-align:center;
+  }
+  .hero-bg{position:absolute; inset:0; z-index:0;
+    background:
+      radial-gradient(ellipse 90% 60% at 50% -10%, rgba(255,148,60,.28), transparent 60%),
+      linear-gradient(180deg, #0b0906 0%, #171009 42%, #1f1508 68%, #241a0c 100%);
+  }
+  .hero-sun{
+    position:absolute; left:50%; top:8%; width:620px; height:620px; transform:translateX(-50%);
+    background:radial-gradient(circle, rgba(255,201,60,.55) 0%, rgba(255,122,60,.22) 45%, transparent 72%);
+    filter:blur(6px); z-index:0; animation:pulseSun 6s ease-in-out infinite;
+  }
+  @keyframes pulseSun{0%,100%{opacity:.75; transform:translateX(-50%) scale(1);} 50%{opacity:1; transform:translateX(-50%) scale(1.06);}}
+  .hero-horizon{
+    position:absolute; left:0; right:0; bottom:0; height:45%; z-index:0;
+    background:linear-gradient(180deg, transparent 0%, rgba(20,14,7,.5) 30%, var(--bg-0) 100%);
+  }
+  .hero-sand-line{
+    position:absolute; left:-5%; right:-5%; bottom:0; height:160px; z-index:1;
+    background:linear-gradient(180deg, rgba(233,205,154,0) 0%, rgba(120,90,45,.35) 100%);
+    clip-path: ellipse(65% 100% at 50% 100%);
+  }
+  .hero-grain{position:absolute; inset:0; z-index:1; opacity:.5; pointer-events:none;
+    background-image:radial-gradient(rgba(255,255,255,.05) 1px, transparent 1px);
+    background-size:3px 3px;
+  }
+  .confetti{position:absolute; inset:0; z-index:2; pointer-events:none; overflow:hidden;}
+  .confetti span{
+    position:absolute; top:-40px; width:9px; height:14px; opacity:.85;
+    animation:fall linear infinite;
+    border-radius:2px;
+  }
+  @keyframes fall{
+    0%{transform:translateY(0) rotate(0deg); opacity:0;}
+    8%{opacity:.9;}
+    100%{transform:translateY(110vh) rotate(540deg); opacity:0;}
+  }
+  .hero-content{position:relative; z-index:3; display:flex; flex-direction:column; align-items:center; max-width:880px;}
+  .hero-logo-wrap{
+    position:relative; margin-bottom:26px; animation:floatLogo 5.5s ease-in-out infinite;
+  }
+  @keyframes floatLogo{0%,100%{transform:translateY(0);} 50%{transform:translateY(-14px);}}
+  .hero-logo-glow{
+    position:absolute; inset:-30px; border-radius:50%;
+    background:radial-gradient(circle, rgba(255,201,60,.35), transparent 70%);
+    filter:blur(10px); z-index:-1;
+  }
+  .hero-logo{width:min(300px, 52vw); height:auto; filter:drop-shadow(0 18px 40px rgba(0,0,0,.55));}
+  .hero-kicker{
+    font-size:13px; letter-spacing:5px; color:var(--gold); font-weight:700; margin-bottom:14px; text-transform:uppercase;
+  }
+  .hero h1{font-size:clamp(38px,7.2vw,84px); color:var(--white); text-shadow:0 8px 30px rgba(0,0,0,.5);}
+  .hero h1 .gold{color:var(--gold);}
+  .hero-meta{
+    display:flex; flex-wrap:wrap; justify-content:center; gap:14px; margin:26px 0 22px;
+  }
+  .hero-meta .pill{
+    display:flex; align-items:center; gap:8px; background:rgba(255,255,255,.06);
+    border:1px solid rgba(255,255,255,.14); backdrop-filter:blur(6px);
+    padding:10px 20px; border-radius:100px; font-size:14px; font-weight:600; letter-spacing:.5px;
+  }
+  .hero-meta .pill b{color:var(--gold); font-weight:700;}
+  .hero-tagline{font-size:clamp(18px,2.6vw,24px); color:var(--sand); font-weight:500; margin-bottom:38px; max-width:560px;}
+  .hero-btns{display:flex; flex-wrap:wrap; gap:18px; justify-content:center;}
+  .scroll-cue{
+    position:absolute; bottom:28px; left:50%; transform:translateX(-50%); z-index:3;
+    display:flex; flex-direction:column; align-items:center; gap:8px; color:var(--white-dim); font-size:11px;
+    letter-spacing:2px; text-transform:uppercase; animation:bob 2.2s ease-in-out infinite;
+  }
+  @keyframes bob{0%,100%{transform:translate(-50%,0);} 50%{transform:translate(-50%,8px);}}
+  .scroll-cue .line{width:1px; height:34px; background:linear-gradient(180deg, var(--gold), transparent);}
+
+  /* ============ SOBRE ============ */
+  .sobre{background:var(--bg-1);}
+  .sobre-grid{display:grid; grid-template-columns:1.1fr .9fr; gap:70px; align-items:center;}
+  .sobre-text p{color:var(--white-dim); font-size:16.5px; margin-bottom:18px;}
+  .sobre-visual{position:relative; aspect-ratio:1/1; border-radius:28px; overflow:hidden;
+    background:
+      radial-gradient(circle at 30% 20%, rgba(255,201,60,.25), transparent 55%),
+      linear-gradient(150deg, #241a0c, #171009 70%);
+    border:1px solid var(--line); display:flex; align-items:center; justify-content:center;
+  }
+  .sobre-visual .orbit-icon{
+    position:absolute; font-size:44px; filter:drop-shadow(0 6px 14px rgba(0,0,0,.4));
+    animation:orbitFloat 6s ease-in-out infinite;
+  }
+  .sobre-visual .oi1{top:14%; left:18%; animation-delay:0s;}
+  .sobre-visual .oi2{top:20%; right:14%; animation-delay:1.3s;}
+  .sobre-visual .oi3{bottom:16%; left:14%; animation-delay:2.1s;}
+  .sobre-visual .oi4{bottom:22%; right:18%; animation-delay:3s;}
+  @keyframes orbitFloat{0%,100%{transform:translateY(0) rotate(0deg);} 50%{transform:translateY(-16px) rotate(6deg);}}
+  .sobre-visual .center-trophy{font-size:110px; filter:drop-shadow(0 14px 26px rgba(0,0,0,.5));}
+  .stat-row{display:flex; gap:38px; margin-top:34px; flex-wrap:wrap;}
+  .stat b{display:block; font-family:'Anton',sans-serif; font-size:34px; color:var(--gold);}
+  .stat span{font-size:12px; color:var(--white-dim); letter-spacing:1px; text-transform:uppercase;}
+
+  /* ============ O QUE VAI TER ============ */
+  .cards-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:24px;}
+  .feature-card{
+    background:var(--bg-card); border:1px solid var(--line); border-radius:var(--radius);
+    padding:34px 28px; transition:transform .4s var(--ease), background .4s, border-color .4s, box-shadow .4s;
+    position:relative; overflow:hidden;
+  }
+  .feature-card::before{
+    content:""; position:absolute; inset:0; opacity:0; transition:opacity .4s;
+    background:radial-gradient(circle at 20% 0%, rgba(255,201,60,.14), transparent 60%);
+  }
+  .feature-card:hover{transform:translateY(-8px); background:var(--bg-card-hover); border-color:rgba(255,201,60,.4); box-shadow:0 20px 40px rgba(0,0,0,.35);}
+  .feature-card:hover::before{opacity:1;}
+  .feature-icon{
+    font-size:34px; width:64px; height:64px; display:flex; align-items:center; justify-content:center;
+    background:rgba(255,201,60,.1); border-radius:16px; margin-bottom:20px; transition:transform .4s var(--ease), background .4s;
+  }
+  .feature-card:hover .feature-icon{transform:scale(1.12) rotate(-6deg); background:rgba(255,201,60,.2);}
+  .feature-card h3{font-family:'Poppins'; text-transform:none; font-size:18px; font-weight:700; letter-spacing:0; color:var(--white); margin-bottom:8px;}
+  .feature-card p{font-size:13.5px; color:var(--white-dim);}
+
+  /* ============ CATEGORIAS ============ */
+  .categorias{background:var(--bg-1);}
+  .cat-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:26px;}
+  .cat-card{
+    background:linear-gradient(165deg, var(--bg-card), var(--bg-2));
+    border:1px solid var(--line); border-radius:24px; padding:40px 32px; text-align:center;
+    transition:transform .4s var(--ease), border-color .4s, box-shadow .4s; position:relative;
+  }
+  .cat-card:hover{transform:translateY(-10px) scale(1.015); border-color:var(--gold); box-shadow:0 22px 50px rgba(0,0,0,.4);}
+  .cat-tag{
+    display:inline-block; font-size:11px; letter-spacing:2px; color:var(--bg-0); background:var(--gold);
+    padding:5px 14px; border-radius:100px; font-weight:700; margin-bottom:22px;
+  }
+  .cat-icon{font-size:46px; margin-bottom:16px;}
+  .cat-card h3{font-size:26px; color:var(--white); margin-bottom:12px;}
+  .cat-card p{color:var(--white-dim); font-size:14.5px;}
+
+  /* ============ EXPERIENCIA / TIMELINE ============ */
+  .timeline-wrap{overflow-x:auto; padding-bottom:10px; -webkit-overflow-scrolling:touch;}
+  .timeline{display:flex; align-items:stretch; gap:0; min-width:760px;}
+  .tl-step{flex:1; text-align:center; position:relative; padding:0 10px;}
+  .tl-dot{
+    width:64px; height:64px; border-radius:50%; margin:0 auto 16px; display:flex; align-items:center; justify-content:center;
+    font-size:26px; background:var(--bg-card); border:2px solid var(--gold); position:relative; z-index:2;
+    transition:transform .4s var(--ease), background .4s;
+  }
+  .tl-step:hover .tl-dot{transform:scale(1.14); background:var(--gold); }
+  .tl-line{position:absolute; top:32px; left:-50%; width:100%; height:2px; background:linear-gradient(90deg, var(--gold-deep), var(--gold)); opacity:.5; z-index:1;}
+  .tl-step:first-child .tl-line{display:none;}
+  .tl-step b{display:block; font-family:'Anton'; letter-spacing:1px; font-size:15px; color:var(--white); margin-bottom:6px;}
+  .tl-step span{font-size:12px; color:var(--white-dim);}
+  .experiencia-note{margin-top:46px; text-align:center; color:var(--sand); font-size:15px; max-width:560px; margin-inline:auto;}
+
+  /* ============ INFO CARDS ============ */
+  .info{background:var(--bg-1);}
+  .info-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:22px;}
+  .info-card{
+    background:var(--bg-card); border:1px solid var(--line); border-radius:20px; padding:32px 22px; text-align:center;
+    transition:transform .4s var(--ease), border-color .4s, box-shadow .4s;
+  }
+  .info-card:hover{transform:translateY(-8px); border-color:var(--gold); box-shadow:var(--shadow-gold);}
+  .info-card .ic{font-size:36px; margin-bottom:14px;}
+  .info-card h4{font-size:11px; letter-spacing:2px; color:var(--gold); text-transform:uppercase; margin-bottom:10px; font-weight:700;}
+  .info-card p{font-family:'Anton'; font-size:19px; color:var(--white); letter-spacing:.5px; line-height:1.25;}
+  .info-card.price p{color:var(--gold); font-size:28px;}
+
+  /* ============ INSCRICAO CTA ============ */
+  .inscricao{
+    background:
+      radial-gradient(ellipse 70% 60% at 50% 0%, rgba(255,201,60,.16), transparent 65%),
+      linear-gradient(180deg, var(--bg-0), #171009);
+    text-align:center; border-top:1px solid var(--line); border-bottom:1px solid var(--line);
+  }
+  .inscricao h2{font-size:clamp(34px,6vw,64px); color:var(--white); margin-bottom:18px;}
+  .inscricao p.lede{max-width:560px; margin:0 auto 30px; color:var(--white-dim); font-size:16.5px;}
+  .price-badge{
+    display:inline-flex; align-items:baseline; gap:10px; background:rgba(255,201,60,.1);
+    border:1px solid rgba(255,201,60,.4); padding:16px 34px; border-radius:100px; margin-bottom:34px;
+  }
+  .price-badge span{font-size:13px; letter-spacing:2px; text-transform:uppercase; color:var(--sand);}
+  .price-badge b{font-family:'Anton'; font-size:34px; color:var(--gold);}
+  .inscricao-note{
+    max-width:600px; margin:34px auto 0; font-size:13.5px; color:var(--white-dim);
+    border-top:1px solid var(--line); padding-top:24px;
+  }
+
+  /* ============ GALERIA ============ */
+  .galeria-grid{
+    display:grid; grid-template-columns:repeat(4,1fr); grid-auto-rows:180px; gap:16px;
+  }
+  .g-item{
+    position:relative; border-radius:16px; overflow:hidden; cursor:pointer;
+    border:1px solid var(--line); background:linear-gradient(150deg, var(--bg-card), var(--bg-2));
+    display:flex; align-items:center; justify-content:center; flex-direction:column; gap:8px;
+    transition:transform .4s var(--ease), box-shadow .4s;
+  }
+  .g-item:nth-child(1){grid-column:span 2; grid-row:span 2;}
+  .g-item:nth-child(4){grid-row:span 2;}
+  .g-item:nth-child(7){grid-column:span 2;}
+  .g-item:hover{transform:scale(1.03); box-shadow:0 20px 40px rgba(0,0,0,.45); z-index:2;}
+  .g-item .g-icon{font-size:30px; opacity:.7;}
+  .g-item .g-label{font-size:11px; letter-spacing:1.5px; text-transform:uppercase; color:var(--white-dim); text-align:center; padding:0 10px;}
+  .g-item::after{
+    content:"🔍"; position:absolute; inset:0; display:flex; align-items:center; justify-content:center;
+    background:rgba(11,9,6,.55); font-size:24px; opacity:0; transition:opacity .35s;
+  }
+  .g-item:hover::after{opacity:1;}
+  .lightbox{
+    position:fixed; inset:0; background:rgba(6,4,2,.94); z-index:2000; display:flex; align-items:center; justify-content:center;
+    opacity:0; pointer-events:none; transition:opacity .35s var(--ease); padding:24px;
+  }
+  .lightbox.open{opacity:1; pointer-events:auto;}
+  .lightbox-inner{
+    background:linear-gradient(160deg, var(--bg-card), var(--bg-2)); border:1px solid var(--line);
+    border-radius:22px; padding:60px 40px; text-align:center; max-width:460px; transform:scale(.9); transition:transform .35s var(--ease);
+  }
+  .lightbox.open .lightbox-inner{transform:scale(1);}
+  .lightbox-inner .g-icon{font-size:52px; display:block; margin-bottom:18px;}
+  .lightbox-inner h4{font-family:'Anton'; color:var(--gold); letter-spacing:1px; margin-bottom:10px; font-size:20px;}
+  .lightbox-inner p{color:var(--white-dim); font-size:14px;}
+  .lightbox-close{
+    position:absolute; top:26px; right:32px; font-size:30px; color:var(--white); background:none; border:none; cursor:pointer;
+    transition:transform .3s, color .3s;
+  }
+  .lightbox-close:hover{color:var(--gold); transform:rotate(90deg);}
+
+  /* ============ COUNTDOWN ============ */
+  .countdown{
+    background:linear-gradient(180deg, #171009, var(--bg-0)); text-align:center;
+  }
+  .cd-grid{display:flex; justify-content:center; gap:22px; flex-wrap:wrap; margin-top:20px;}
+  .cd-box{
+    background:var(--bg-card); border:1px solid var(--line); border-radius:20px;
+    width:130px; padding:26px 10px; position:relative; overflow:hidden;
+  }
+  .cd-box::before{content:""; position:absolute; inset:0; background:radial-gradient(circle at 50% 0%, rgba(255,201,60,.16), transparent 70%);}
+  .cd-num{
+    font-family:'Anton'; font-size:clamp(34px,6vw,52px); color:var(--gold); position:relative; z-index:1;
+    font-variant-numeric:tabular-nums;
+  }
+  .cd-label{font-size:11px; letter-spacing:2px; text-transform:uppercase; color:var(--white-dim); position:relative; z-index:1; margin-top:4px;}
+  .countdown-note{margin-top:30px; color:var(--sand); font-size:16px; font-weight:500;}
+
+  /* ============ ENCERRAMENTO ============ */
+  .final{
+    position:relative; min-height:88vh; display:flex; align-items:center; justify-content:center;
+    text-align:center; overflow:hidden; padding:120px 24px;
+  }
+  .final-bg{
+    position:absolute; inset:0; z-index:0;
+    background:
+      radial-gradient(ellipse 80% 50% at 50% 15%, rgba(255,138,60,.45), transparent 60%),
+      linear-gradient(180deg, #241a0c 0%, #171009 45%, #0b0906 100%);
+  }
+  .final-court{
+    position:absolute; left:0; right:0; bottom:0; height:42%; z-index:0;
+    background:linear-gradient(180deg, rgba(20,14,7,0), rgba(20,14,7,.9) 90%);
+  }
+  .final-net{
+    position:absolute; left:50%; bottom:0; transform:translateX(-50%); width:min(70%,640px); height:130px; z-index:1;
+    background-image:
+      repeating-linear-gradient(90deg, rgba(255,201,60,.25) 0 2px, transparent 2px 26px),
+      repeating-linear-gradient(0deg, rgba(255,201,60,.25) 0 2px, transparent 2px 26px);
+    opacity:.5; mask-image:linear-gradient(180deg, black, transparent);
+  }
+  .final-silhouette{position:absolute; bottom:0; font-size:120px; z-index:1; opacity:.9; filter:drop-shadow(0 10px 20px rgba(0,0,0,.5));}
+  .final-s1{left:8%;}
+  .final-s2{right:9%; transform:scaleX(-1);}
+  .final-content{position:relative; z-index:2; display:flex; flex-direction:column; align-items:center;}
+  .final-date{font-family:'Anton'; font-size:clamp(38px,8vw,90px); color:var(--white); text-shadow:0 10px 30px rgba(0,0,0,.5);}
+  .final-meta{display:flex; flex-wrap:wrap; gap:12px; justify-content:center; margin:20px 0 6px;}
+  .final-meta span{
+    font-size:14px; font-weight:600; letter-spacing:1px; background:rgba(255,255,255,.08);
+    border:1px solid rgba(255,255,255,.16); padding:8px 18px; border-radius:100px;
+  }
+  .final-meta span b{color:var(--gold);}
+  .final-tagline{font-size:clamp(20px,3vw,30px); color:var(--sand); margin:26px 0 36px; font-weight:500;}
+
+  /* ============ FOOTER ============ */
+  footer{background:var(--bg-0); border-top:1px solid var(--line); padding:60px 0 30px; text-align:center;}
+  footer img{width:56px; margin:0 auto 16px; opacity:.9;}
+  footer p{color:var(--white-dim); font-size:13px; margin-bottom:6px;}
+  footer .foot-links{display:flex; gap:24px; justify-content:center; margin:20px 0; flex-wrap:wrap;}
+  footer .foot-links a{font-size:12px; letter-spacing:1px; text-transform:uppercase; color:var(--white-dim); transition:color .3s;}
+  footer .foot-links a:hover{color:var(--gold);}
+  footer .copy{margin-top:24px; font-size:11px; color:rgba(251,247,239,.35);}
+
+  /* ============ RESPONSIVE ============ */
+  @media(max-width:980px){
+    .nav-links{display:none;}
+    .nav-toggle{display:flex;}
+    .mobile-menu{display:flex;}
+    .sobre-grid{grid-template-columns:1fr; gap:50px;}
+    .cards-grid{grid-template-columns:repeat(2,1fr);}
+    .cat-grid{grid-template-columns:1fr; max-width:420px; margin:0 auto;}
+    .info-grid{grid-template-columns:repeat(2,1fr);}
+    .galeria-grid{grid-template-columns:repeat(2,1fr); grid-auto-rows:150px;}
+    .g-item:nth-child(1){grid-column:span 2; grid-row:span 1;}
+    .g-item:nth-child(7){grid-column:span 1;}
+    .final-silhouette{font-size:70px;}
+  }
+  @media(max-width:600px){
+    section{padding:80px 0;}
+    .cards-grid{grid-template-columns:1fr;}
+    .info-grid{grid-template-columns:1fr 1fr;}
+    .hero-meta .pill{font-size:12.5px; padding:9px 16px;}
+    .cd-box{width:76px; padding:16px 6px;}
+    .cd-label{font-size:9px;}
+    .final-silhouette{display:none;}
+    .timeline{min-width:640px;}
+  }
+</style>
+</head>
+<body>
+
+<!-- ============ NAV ============ -->
+<header id="siteHeader">
+  <div class="container">
+    <nav>
+      <a href="#hero" class="nav-brand">
+        <img src="assets/logo-white.png" alt="Logo Copa de Futevôlei Amigos de Davi">
+        <span>COPA AMIGOS DE DAVI<small>3ª EDIÇÃO · 2027</small></span>
+      </a>
+      <div class="nav-links">
+        <a href="#sobre">O Evento</a>
+        <a href="#o-que-vai-ter">Atrações</a>
+        <a href="#categorias">Categorias</a>
+        <a href="#informacoes">Informações</a>
+        <a href="#galeria">Galeria</a>
+        <a href="#inscricao" class="btn btn-primary nav-cta">Inscreva-se</a>
+      </div>
+      <button class="nav-toggle" id="navToggle" aria-label="Abrir menu">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#sobre">O Evento</a>
+    <a href="#o-que-vai-ter">Atrações</a>
+    <a href="#categorias">Categorias</a>
+    <a href="#informacoes">Informações</a>
+    <a href="#galeria">Galeria</a>
+    <a href="#inscricao">Inscreva-se</a>
+  </div>
+</header>
+
+<!-- ============ HERO ============ -->
+<section class="hero" id="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-sun"></div>
+  <div class="hero-sand-line"></div>
+  <div class="hero-grain"></div>
+  <div class="confetti" id="confetti"></div>
+  <div class="hero-horizon"></div>
+
+  <div class="hero-content">
+    <div class="hero-logo-wrap">
+      <div class="hero-logo-glow"></div>
+      <img class="hero-logo" src="assets/logo-white.png" alt="Logo oficial — Copa de Futevôlei Amigos de Davi">
+    </div>
+    <div class="hero-kicker">🏆 3ª edição · uma história que continua</div>
+    <h1>3ª COPA DE FTV<br><span class="gold">AMIGOS DE DAVI</span></h1>
+    <div class="hero-meta">
+      <span class="pill">📅 <b>30 de Janeiro de 2027</b></span>
+      <span class="pill">📍 <b>Prainha Zona Sul</b></span>
+      <span class="pill">⏰ <b>A partir das 9h</b></span>
+    </div>
+    <p class="hero-tagline">"Mais que um campeonato. Uma celebração entre amigos."</p>
+    <div class="hero-btns">
+      <a href="#inscricao" class="btn btn-primary btn-lg">Quero Participar</a>
+      <a href="#informacoes" class="btn btn-outline btn-lg">Conferir Detalhes</a>
+    </div>
+  </div>
+
+  <div class="scroll-cue"><div class="line"></div>role a página</div>
+</section>
+
+<!-- ============ SOBRE ============ -->
+<section class="sobre" id="sobre">
+  <div class="container sobre-grid">
+    <div class="sobre-text reveal">
+      <div class="eyebrow">Sobre o evento</div>
+      <h2 class="section-title">3 anos de amizade,<br>competição e <em>resenha.</em></h2>
+      <p>A Copa Amigos de Davi nasceu para reunir a galera em torno de uma paixão: o futevôlei. A cada edição, novos jogadores, novas histórias, novas disputas e, principalmente, novos momentos para guardar.</p>
+      <p>Em 2027, chegamos à 3ª edição com a missão de fazer uma celebração ainda mais especial — porque essa história é nossa, e ela continua.</p>
+      <div class="stat-row">
+        <div class="stat"><b>3ª</b><span>Edição</span></div>
+        <div class="stat"><b>100%</b><span>Resenha garantida</span></div>
+        <div class="stat"><b>1</b><span>Grande família</span></div>
+      </div>
+    </div>
+    <div class="sobre-visual reveal-scale">
+      <span class="orbit-icon oi1">🏐</span>
+      <span class="orbit-icon oi2">🥇</span>
+      <span class="orbit-icon oi3">🏖️</span>
+      <span class="orbit-icon oi4">🤝</span>
+      <span class="center-trophy">🏆</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============ O QUE VAI TER ============ -->
+<section id="o-que-vai-ter">
+  <div class="container">
+    <div class="eyebrow center">A experiência completa</div>
+    <h2 class="section-title center">O que vai ter</h2>
+    <p class="section-lede center">Tudo que você precisa para viver o melhor final de semana de futevôlei do ano.</p>
+    <div class="cards-grid">
+      <div class="feature-card reveal"><div class="feature-icon">🏖️</div><h3>Futevôlei e competição</h3><p>Jogos disputados em quadras de areia, com a energia e o clima que só o futevôlei tem.</p></div>
+      <div class="feature-card reveal"><div class="feature-icon">👕</div><h3>Camisa oficial</h3><p>A camisa comemorativa da 3ª edição, para você levar essa história para sempre.</p></div>
+      <div class="feature-card reveal"><div class="feature-icon">🩳</div><h3>Short oficial</h3><p>Kit completo para jogar com o visual oficial da Copa Amigos de Davi.</p></div>
+      <div class="feature-card reveal"><div class="feature-icon">📸</div><h3>Cobertura fotográfica</h3><p>Cobertura completa do evento por <strong>Rec Morango</strong>, registrando cada lance e cada resenha.</p></div>
+      <div class="feature-card reveal"><div class="feature-icon">🎶</div><h3>Pagode ao vivo</h3><p>Muita música boa para embalar o dia, dentro e fora da quadra.</p></div>
+      <div class="feature-card reveal"><div class="feature-icon">🥩</div><h3>Churrasco</h3><p>Aquele churrasco de respeito para recarregar as energias entre os jogos.</p></div>
+      <div class="feature-card reveal"><div class="feature-icon">🏆</div><h3>Troféus</h3><p>Premiação para os campeões de cada categoria em quadra.</p></div>
+      <div class="feature-card reveal"><div class="feature-icon">🎁</div><h3>Brindes e premiações</h3><p>Mimos e surpresas especiais para celebrar mais essa edição.</p></div>
+      <div class="feature-card reveal"><div class="feature-icon">🤝</div><h3>Resenha e confraternização</h3><p>O verdadeiro coração do evento: amigos reunidos, contando histórias e criando novas.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CATEGORIAS ============ -->
+<section class="categorias" id="categorias">
+  <div class="container">
+    <div class="eyebrow center">Onde você joga</div>
+    <h2 class="section-title center">Escolha sua categoria</h2>
+    <p class="section-lede center">Três formas de entrar em quadra e fazer parte dessa história.</p>
+    <div class="cat-grid">
+      <div class="cat-card reveal">
+        <span class="cat-tag">Duplas mistas</span>
+        <div class="cat-icon">🙌</div>
+        <h3>Misto</h3>
+        <p>Categoria voltada para duplas mistas.</p>
+      </div>
+      <div class="cat-card reveal">
+        <span class="cat-tag">Para começar</span>
+        <div class="cat-icon">🌱</div>
+        <h3>Iniciante</h3>
+        <p>Para quem está começando e quer viver a experiência de competir.</p>
+      </div>
+      <div class="cat-card reveal">
+        <span class="cat-tag">Alto nível</span>
+        <div class="cat-icon">🔥</div>
+        <h3>Open</h3>
+        <p>Para quem quer entrar em quadra buscando alto nível de competição.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ EXPERIENCIA / TIMELINE ============ -->
+<section id="experiencia">
+  <div class="container">
+    <div class="eyebrow center">O dia da Copa</div>
+    <h2 class="section-title center">Chegou a hora de sair da<br><em>arquibancada e entrar em quadra.</em></h2>
+    <div class="timeline-wrap reveal">
+      <div class="timeline">
+        <div class="tl-step"><div class="tl-line"></div><div class="tl-dot">🚗</div><b>Chegada</b><span>Recepção da galera</span></div>
+        <div class="tl-step"><div class="tl-line"></div><div class="tl-dot">🏐</div><b>Competição</b><span>Jogos e disputas</span></div>
+        <div class="tl-step"><div class="tl-line"></div><div class="tl-dot">🥩</div><b>Churrasco</b><span>Pausa para recarregar</span></div>
+        <div class="tl-step"><div class="tl-line"></div><div class="tl-dot">🎶</div><b>Pagode</b><span>Música boa ao vivo</span></div>
+        <div class="tl-step"><div class="tl-line"></div><div class="tl-dot">🏆</div><b>Premiação</b><span>Hora dos campeões</span></div>
+        <div class="tl-step"><div class="tl-line"></div><div class="tl-dot">🤝</div><b>Resenha</b><span>O evento continua</span></div>
+      </div>
+    </div>
+    <p class="experiencia-note reveal">O evento continua mesmo fora da quadra — porque aqui, cada momento faz parte da história.</p>
+  </div>
+</section>
+
+<!-- ============ INFORMAÇÕES ============ -->
+<section class="info" id="informacoes">
+  <div class="container">
+    <div class="eyebrow center">Anote na agenda</div>
+    <h2 class="section-title center">Informações do evento</h2>
+    <p class="section-lede center">Tudo que você precisa saber para garantir sua presença.</p>
+    <div class="info-grid">
+      <div class="info-card reveal"><div class="ic">📅</div><h4>Data</h4><p>30 de Janeiro<br>de 2027</p></div>
+      <div class="info-card reveal"><div class="ic">📍</div><h4>Local</h4><p>Prainha<br>Zona Sul</p></div>
+      <div class="info-card reveal"><div class="ic">⏰</div><h4>Horário</h4><p>A partir das<br>9h da manhã</p></div>
+      <div class="info-card price reveal"><div class="ic">💰</div><h4>Inscrição</h4><p>R$ 170</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ INSCRIÇÃO CTA ============ -->
+<section class="inscricao" id="inscricao">
+  <div class="container">
+    <div class="eyebrow center">Última chamada</div>
+    <h2 class="reveal">Vai ficar de fora?</h2>
+    <p class="lede reveal">Garanta sua participação na 3ª Copa de FTV Amigos de Davi e venha fazer parte de mais um capítulo dessa história.</p>
+    <div class="price-badge reveal"><span>Inscrição</span><b>R$ 170</b></div>
+    <div class="reveal">
+      <a href="#inscricao-form" class="btn btn-primary btn-lg">Quero Garantir Minha Vaga</a>
+    </div>
+    <p class="inscricao-note reveal">
+      O pagamento poderá ser realizado até <strong>15 de dezembro</strong>, para que os materiais do evento possam ser pedidos com antecedência. Para quem preferir ou puder, também será possível realizar o pagamento de forma parcelada.<br><br>
+      <span class="editable" id="inscricao-form">🔗 Link / contato oficial de inscrição a definir</span>
+      <span class="badge-edit">editável</span>
+    </p>
+  </div>
+</section>
+
+<!-- ============ GALERIA ============ -->
+<section id="galeria">
+  <div class="container">
+    <div class="eyebrow center">Memórias da Copa</div>
+    <h2 class="section-title center">De outras edições,<br><em>para mais uma história.</em></h2>
+    <p class="section-lede center">Jogadores, partidas, comemorações, troféus, churrasco e muita descontração — a galeria oficial entra aqui.</p>
+    <div class="galeria-grid">
+      <div class="g-item reveal-scale" data-title="Edição 2023" data-desc="Foto oficial a ser adicionada." data-icon="🏐"><span class="g-icon">🏐</span><span class="g-label">Partida · Edição 2023</span></div>
+      <div class="g-item reveal-scale" data-title="Comemoração" data-desc="Foto oficial a ser adicionada." data-icon="🎉"><span class="g-icon">🎉</span><span class="g-label">Comemoração</span></div>
+      <div class="g-item reveal-scale" data-title="Troféus" data-desc="Foto oficial a ser adicionada." data-icon="🏆"><span class="g-icon">🏆</span><span class="g-label">Premiação</span></div>
+      <div class="g-item reveal-scale" data-title="Churrasco" data-desc="Foto oficial a ser adicionada." data-icon="🥩"><span class="g-icon">🥩</span><span class="g-label">Churrasco</span></div>
+      <div class="g-item reveal-scale" data-title="Galera reunida" data-desc="Foto oficial a ser adicionada." data-icon="🤝"><span class="g-icon">🤝</span><span class="g-label">Resenha</span></div>
+      <div class="g-item reveal-scale" data-title="Dupla campeã" data-desc="Foto oficial a ser adicionada." data-icon="🥇"><span class="g-icon">🥇</span><span class="g-label">Campeões</span></div>
+      <div class="g-item reveal-scale" data-title="Edição 2025" data-desc="Foto oficial a ser adicionada." data-icon="📸"><span class="g-icon">📸</span><span class="g-label">Melhores momentos</span></div>
+    </div>
+    <p class="btn-block-note center" style="margin-top:22px;">📷 Espaços reservados para as fotos oficiais das edições anteriores <span class="badge-edit">editável</span></p>
+  </div>
+</section>
+
+<!-- ============ COUNTDOWN ============ -->
+<section class="countdown" id="countdown">
+  <div class="container">
+    <div class="eyebrow center">Já está quase na hora</div>
+    <h2 class="section-title center">Contagem regressiva</h2>
+    <div class="cd-grid reveal-scale">
+      <div class="cd-box"><div class="cd-num" id="cd-days">00</div><div class="cd-label">Dias</div></div>
+      <div class="cd-box"><div class="cd-num" id="cd-hours">00</div><div class="cd-label">Horas</div></div>
+      <div class="cd-box"><div class="cd-num" id="cd-mins">00</div><div class="cd-label">Minutos</div></div>
+      <div class="cd-box"><div class="cd-num" id="cd-secs">00</div><div class="cd-label">Segundos</div></div>
+    </div>
+    <p class="countdown-note">O grande dia está chegando.</p>
+  </div>
+</section>
+
+<!-- ============ ENCERRAMENTO ============ -->
+<section class="final" id="final">
+  <div class="final-bg"></div>
+  <div class="final-court"></div>
+  <div class="final-net"></div>
+  <span class="final-silhouette final-s1">🏃</span>
+  <span class="final-silhouette final-s2">🙌</span>
+  <div class="final-content">
+    <div class="hero-kicker">🏆 3ª Copa de FTV Amigos de Davi</div>
+    <h2 class="final-date">30 de Janeiro<br>de 2027</h2>
+    <div class="final-meta">
+      <span>📍 <b>Prainha Zona Sul</b></span>
+      <span>⏰ <b>A partir das 9h</b></span>
+      <span>💰 Inscrição: <b>R$ 170</b></span>
+    </div>
+    <p class="final-tagline">"A quadra está esperando por você."</p>
+    <a href="#inscricao" class="btn btn-primary btn-lg">Participar da Copa</a>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="container">
+    <img src="assets/logo-white.png" alt="Logo Copa de Futevôlei Amigos de Davi">
+    <p><strong>3ª Copa de FTV Amigos de Davi</strong></p>
+    <p>30 de janeiro de 2027 · Prainha Zona Sul · A partir das 9h</p>
+    <div class="foot-links">
+      <a href="#sobre">O Evento</a>
+      <a href="#categorias">Categorias</a>
+      <a href="#informacoes">Informações</a>
+      <a href="#inscricao">Inscrição</a>
+    </div>
+    <p class="copy">© 2027 Copa de Futevôlei Amigos de Davi. Mais que um campeonato, uma celebração entre amigos.</p>
+  </div>
+</footer>
+
+<!-- ============ LIGHTBOX ============ -->
+<div class="lightbox" id="lightbox">
+  <button class="lightbox-close" id="lightboxClose">&times;</button>
+  <div class="lightbox-inner">
+    <span class="g-icon" id="lbIcon">🏐</span>
+    <h4 id="lbTitle">Título</h4>
+    <p id="lbDesc">Descrição</p>
+  </div>
+</div>
+
+<script>
+(function(){
+  // Header scroll state
+  const header = document.getElementById('siteHeader');
+  const onScroll = () => header.classList.toggle('scrolled', window.scrollY > 40);
+  document.addEventListener('scroll', onScroll, {passive:true});
+  onScroll();
+
+  // Mobile menu
+  const navToggle = document.getElementById('navToggle');
+  const mobileMenu = document.getElementById('mobileMenu');
+  navToggle.addEventListener('click', () => mobileMenu.classList.toggle('open'));
+  mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => mobileMenu.classList.remove('open')));
+
+  // Confetti generator (subtle, festive)
+  const confettiHost = document.getElementById('confetti');
+  const colors = ['#ffc93c', '#ff7a3c', '#fbf7ef', '#e8cd9a'];
+  for(let i=0;i<28;i++){
+    const c = document.createElement('span');
+    c.style.left = Math.random()*100 + '%';
+    c.style.background = colors[i % colors.length];
+    c.style.animationDuration = (7 + Math.random()*8) + 's';
+    c.style.animationDelay = (Math.random()*10) + 's';
+    c.style.opacity = 0.4 + Math.random()*0.5;
+    confettiHost.appendChild(c);
+  }
+
+  // Reveal on scroll
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, {threshold:.15});
+  document.querySelectorAll('.reveal, .reveal-scale').forEach(el => io.observe(el));
+
+  // Countdown to Jan 30, 2027, 09:00 (Brasília time, UTC-3)
+  const target = new Date('2027-01-30T09:00:00-03:00').getTime();
+  const dEl = document.getElementById('cd-days');
+  const hEl = document.getElementById('cd-hours');
+  const mEl = document.getElementById('cd-mins');
+  const sEl = document.getElementById('cd-secs');
+  function pad(n){ return String(n).padStart(2,'0'); }
+  function tick(){
+    const now = Date.now();
+    let diff = target - now;
+    if(diff < 0) diff = 0;
+    const days = Math.floor(diff / 86400000);
+    const hours = Math.floor((diff % 86400000) / 3600000);
+    const mins = Math.floor((diff % 3600000) / 60000);
+    const secs = Math.floor((diff % 60000) / 1000);
+    dEl.textContent = pad(days);
+    hEl.textContent = pad(hours);
+    mEl.textContent = pad(mins);
+    sEl.textContent = pad(secs);
+  }
+  tick();
+  setInterval(tick, 1000);
+
+  // Gallery lightbox
+  const lightbox = document.getElementById('lightbox');
+  const lbIcon = document.getElementById('lbIcon');
+  const lbTitle = document.getElementById('lbTitle');
+  const lbDesc = document.getElementById('lbDesc');
+  document.querySelectorAll('.g-item').forEach(item => {
+    item.addEventListener('click', () => {
+      lbIcon.textContent = item.dataset.icon || '📷';
+      lbTitle.textContent = item.dataset.title || '';
+      lbDesc.textContent = item.dataset.desc || '';
+      lightbox.classList.add('open');
+    });
+  });
+  function closeLightbox(){ lightbox.classList.remove('open'); }
+  document.getElementById('lightboxClose').addEventListener('click', closeLightbox);
+  lightbox.addEventListener('click', (e) => { if(e.target === lightbox) closeLightbox(); });
+  document.addEventListener('keydown', (e) => { if(e.key === 'Escape') closeLightbox(); });
+})();
+</script>
+</body>
+</html>
